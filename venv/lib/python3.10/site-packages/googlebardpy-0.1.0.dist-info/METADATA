@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: googlebardpy
+Version: 0.1.0
+Summary: Google Bard API in Python
+Home-page: https://codeberg.org/Bavarder/googlebardpy
+License: GPL-3.0-or-later
+Keywords: google,bard,chat
+Author: 0xMRTT
+Author-email: 0xMRTT@proton.me
+Maintainer: 0xMRTT
+Maintainer-email: 0xMRTT@proton.me
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Dist: requests (>=2.29.0,<3.0.0)
+Project-URL: Bug Tracker, https://codeberg.org/Bavarder/googlebardpy/issues
+Project-URL: Documentation, https://codeberg.org/Bavarder/googlebardpy
+Project-URL: Repository, https://codeberg.org/Bavarder/googlebardpy
+Description-Content-Type: text/markdown
+
+# Google Bard
+
+## Installation
+
+### Pypi
+
+```sh
+pip install googlebardpy
+```
+
+### Codeberg
+
+```sh
+pip install --index-url https://codeberg.org/api/packages/Bavarder/pypi/simple/ googlebardpy
+```
+
+## Usage
+
+### Get the token
+
+1. Go to [bard.google.com](https://bard.google.com)
+2. Open developer tools
+3. Go to Application
+4. Go to Cookies
+5. Copy the content of `__Secure-1PSID`
+
+### Use the chatbot
+
+```python
+secure_1psid = "..."
+chat = BardChat(secure_1psid)
+chat.ask("Hello, who are you ?")
+```
+
