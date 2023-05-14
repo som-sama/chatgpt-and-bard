@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 my_secret = os.getenv('OPENAI_API_KEY')
-# my_secret = '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'
 app = Flask(__name__)
 
 @app.route('/')
