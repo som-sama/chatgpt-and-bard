@@ -1,11 +1,12 @@
 import os
 from flask import Flask, request, jsonify, render_template
 import requests
+from dotenv import load_dotenv
 # from bard_chat import BardChat
 
+load_dotenv()
 
-my_secret = os.environ['OPENAI_API_KEY']
-secure_1psid = os.environ['SECURE_1PSID']
+my_secret = os.getenv('OPENAI_API_KEY')
 app = Flask(__name__)
 
 @app.route('/')
@@ -49,4 +50,4 @@ def chatgpt():
 #   return jsonify({"message": bard_response}), 200
 
 if __name__ == "__main__":
-     app.run(host='0.0.0.0', port=5000)
+     app.run(host='0.0.0.0', port=4000)
