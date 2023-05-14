@@ -46,15 +46,12 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-
-    <script>
-    document.getElementById('formChatGPT').addEventListener('submit', function(event) {
+<script>
+document.getElementById('formChatGPT').addEventListener('submit', function(event) {
     event.preventDefault();
     var message = document.getElementById('inputChatGPT').value;
 
-    // Now use 'fetch' or another method to send 'message' to your server
-    // ...
-      fetch('/chatgpt', {
+    fetch('/chatgpt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -69,36 +66,7 @@
     .catch((error) => {
         console.error('Error:', error);
     });
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
 });
-});
-
-document.getElementById('formBard').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var message = document.getElementById('inputBard').value;
-
-    // Now use 'fetch' or another method to send 'message' to your server
-    // ...
-    fetch('/chatgpt', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Response from ChatGPT:', data.message);
-        // Display data.message in your HTML here
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-});
-
-    </script>
+</script>
 </body>
 </html>
