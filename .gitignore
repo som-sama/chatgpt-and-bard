@@ -1,10 +1,19 @@
-venv/
-.cache
+# Ignore compiled Python files
+*.pyc
+*.pyo
 __pycache__
-.config
-``` 
-.upm
-```
-``` 
 
+# Ignore virtual environment
+venv/
+
+# Ignore cache and temporary files
+.cache/
+*.swp
+*.swo
+
+# Ignore environment configuration files
 .env
+
+# Ignore configuration files specific to development tools
+.config/
+.upm/
