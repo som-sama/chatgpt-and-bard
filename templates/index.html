@@ -4,6 +4,7 @@
     <title>Chatbot Comparison</title>
     <style>
 body {
+    background-color: antiquewhite;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -11,7 +12,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
 }
 
 .chatbot {
@@ -20,6 +20,9 @@ body {
     padding: 20px;
     box-sizing: border-box;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .chatbot h2 {
@@ -28,7 +31,7 @@ body {
 
 .chatbot textarea {
     width: 100%;
-    height: 50%;
+    height: 200px;
     margin-bottom: 10px;
 }
 
@@ -37,6 +40,7 @@ input[type="text"] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    border-color: green;
 }
 
 button {
@@ -45,6 +49,8 @@ button {
     margin: 8px 0;
     box-sizing: border-box;
     cursor: pointer;
+    background-color: green;
+    color: white;
 }
 
     </style>
