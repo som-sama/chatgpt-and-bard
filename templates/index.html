@@ -146,6 +146,7 @@ button {
         var last = event.results.length - 1;
         var transcript = event.results[last][0].transcript;
         console.log("Recognition result: " + transcript);
+
         document.getElementById('inputChat').value = transcript;
 };
     </script>
