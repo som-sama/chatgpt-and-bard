@@ -52,8 +52,28 @@ button {
     background-color: green;
     color: black;
 }
+/* #microphoneButton {
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid black;
+}
 
+#microphoneButton.small {
+  font-size: 16px;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+#submitButton {
+  display: flex;
+  align-items: center;
+} */
     </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <div class="chatbot">
@@ -63,7 +83,9 @@ button {
     <label for="bard">Response from Bard:</label>
     <textarea id="bard" placeholder="Waiting for Bard..." readonly></textarea>
     <input id="inputChat" type="text" placeholder="Enter your message">
+    <button id="micButton" class="small"><i class="material-icons">mic_none</i></button> <!-- Mic button -->
     <button id="submitButton">Submit</button>
+   
 </div>
 
     <script>
@@ -109,6 +131,24 @@ button {
                 console.error('Error:', error);
             });
         });
+         // New code for speech-to-text
+         var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var recognition = new SpeechRecognition();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        document.getElementById('micButton').addEventListener('click', function(event) {
+            recognition.start();
+        });
+
+        recognition.onresult = function(event) {
+        var last = event.results.length - 1;
+        var transcript = event.results[last][0].transcript;
+        console.log("Recognition result: " + transcript);
+
+        document.getElementById('inputChat').value = transcript;
+};
     </script>
 </body>
 
